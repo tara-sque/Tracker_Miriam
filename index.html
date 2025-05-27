@@ -1,0 +1,104 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title> Miriam's Work Tracker</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+        
+    <body>
+        <div class="center">
+            <div class="lineholder">
+                <div class="stats-block module">
+                    <div class="text">
+                        <div class="textline"><h1>2130 Module im Lernplan</h1></div>
+                        <div class="textline"><div>Gelernt:</div><div id="gelernt">585 (27%)</div></div>
+                        <div class="textline"><div>Gelesen:</div><div id="gelesen">585 (27%)</div></div>
+                        <div class="textline"><div>Neu:</div><div id="neu">585 (27%)</div></div>
+                    </div>
+                    <div class="circle-percentage">
+                        <svg width="100%" height="100%" viewBox="0 0 80 80" preserveAspectRatio="xMidYMid">
+                          <g transform="translate(40,40)">
+                            <!-- Base Circle -->
+                            <path d="M0,-40A40,40,0,1,1,0,40A40,40,0,1,1,0,-40M0,-29A29,29,0,1,0,0,29A29,29,0,1,0,0,-29Z" fill="#eeeeee"></path>
+                            
+                            <!-- Gelernt Arc -->
+                            <path id="gelerntArc" fill="#013476"></path>
+                      
+                            <!-- Gelesen Arc -->
+                            <path id="gelesenArc" fill="#a3d8f8"></path>
+                      
+                            <!-- Text Label -->
+                            <text id="percentageText" text-anchor="middle" y="6" style="font-size: 1.4em; font-weight: 600; fill:#013476;">0%</text>
+                          </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="stats-block fragen">
+                    <div class="text">
+                        <div class="textline"><h1 id="fragen"></h1></div>
+                        <div class="textline"><div>Richtig:</div><div id="richtig"> haha </div></div>
+                        <div class="textline"><div>Falsch:</div><div id="falsch">585 (27%)</div></div>
+                        <div class="textline"><div>Unbeantwortet:</div><div id="unbeantwortet">585 (27%)</div></div>
+                    </div>
+                    <div class="circle-percentage">
+                        <svg width="100%" height="100%" viewBox="0 0 80 80" preserveAspectRatio="xMidYMid">
+                          <g transform="translate(40,40)">
+                            <!-- Base Circle -->
+                            <path d="M0,-40A40,40,0,1,1,0,40A40,40,0,1,1,0,-40M0,-29A29,29,0,1,0,0,29A29,29,0,1,0,0,-29Z" fill="#eeeeee"></path>
+                            
+                            <!-- Richtig Arc -->
+                            <path id="richtigArc" fill="#8dc048"></path>
+                      
+                            <!-- Falsch Arc -->
+                            <path id="falschArc" fill="#f7433a"></path>
+
+                            <!-- n/a Arc -->
+                            <path id="unbeantwortetArc" fill="#eeeeee"></path>
+                      
+                            <!-- Text Label -->
+                            <text id="percentageRFText" text-anchor="middle" y="6" style="font-size: 1.4em; font-weight: 600; fill:#8dc048;">0%</text>
+                          </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Inputs -->
+
+            <div class="databox">
+                <h1>Daten hinzufügen</h1>
+                <div class="input-line">
+                    <input type="number" id="input-gelernt" name="input-gelernt" placeholder="Zusätzlich Gelernt" required>
+                    <button onclick="updateGelernt()">Confirm</button> <br>
+                </div>
+                <div class="input-line">
+                    <input type="number" id="input-gelesen" name="input-gelesen" placeholder="Zusätzlich Gelesen" required>
+                    <button onclick="updateGelesen()">Confirm</button><br>
+                </div> <br><br>
+                <div class="input-line">
+                    <input type="number" id="input-richtig" name="input-richtig" placeholder="Zusätzlich Richtig" required>
+                    <button onclick="updateRichtig()">Confirm</button><br>
+                </div> 
+                <div class="input-line">
+                    <input type="number" id="input-falsch" name="input-falsch" placeholder="Zusätzlich Falsch" required>
+                    <button onclick="updateFalsch()">Confirm</button><br>
+                </div>
+                <div class="input-line">
+                    <input type="number" class="contact-input" name="input-unbeantwortet" placeholder="Zusätzlich Unbeantwortet" required>
+                    <button onclick="updateUnbeantwortet()">Confirm</button><br>
+                </div>
+            </div>
+        </div>
+    <script src="app.js"></script> 
+    </body>
+
+
+
+
+
+
+
+</html>
