@@ -22,14 +22,14 @@ function getCookie(cname) {
 }
 
 function add_to_gelernt(amount){
-    gelernt_abs = gelernt_abs + amount; 
+    gelernt_abs = amount; 
     gelernt_rel = Math.round(gelernt_abs/module_total*100); 
     setCookie("gelernt_abs", gelernt_abs);
     document.getElementById("gelernt").innerHTML=gelernt_abs+" ("+gelernt_rel+"%)"; 
 }
 
 function add_to_gelesen(amount){
-    gelesen_abs = gelesen_abs + amount;
+    gelesen_abs = amount;
     gelesen_rel = Math.round(gelesen_abs/module_total*100); 
     setCookie("gelesen_abs", gelesen_abs);
     document.getElementById("gelesen").innerHTML=gelesen_abs+" ("+gelesen_rel+"%)"; 
@@ -140,7 +140,7 @@ function updateCircleChart(gelerntPercent, gelesenPercent) {
 
 
 // Funktionscheck
-alert("hey!");
+alert("hello my love <3");
 
 let module_total=2130;
 
