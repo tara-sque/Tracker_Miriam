@@ -144,20 +144,27 @@ alert("hey!");
 
 let module_total=2130;
 
+gelernt_abs=560;
+/**
 if (getCookie("gelernt_abs")==""){
-    gelernt_abs=0;
+    gelernt_abs=560;
 } else {
     gelernt_abs=Number(getCookie("gelernt_abs"));
 }
+ */
 
 var gelernt_rel=Math.round(gelernt_abs/module_total*100); 
 document.getElementById("gelernt").innerHTML=gelernt_abs+" ("+gelernt_rel+"%)"; 
 
+gelesen_abs=27;
+/** 
 if (getCookie("gelesen_abs")==""){
-    gelesen_abs=0;
+    gelesen_abs=27;
 } else {
     gelesen_abs=Number(getCookie("gelesen_abs"));
 }
+*/
+
 var gelesen_rel=Math.round(gelesen_abs/module_total*100); 
 document.getElementById("gelesen").innerHTML=gelesen_abs+" ("+gelesen_rel+"%)"; 
 
@@ -188,22 +195,34 @@ function updateGelesen(){
 
 
 
-
+var richtig_abs=1613;
+/**
 if (getCookie("richtig_abs")==""){
     richtig_abs=1613;
 } else {
     richtig_abs=Number(getCookie("richtig_abs"));
 }
+ */
+
+
+var falsch_abs=405;
+/** 
 if (getCookie("falsch_abs")==""){
     falsch_abs=405;
 } else {
     falsch_abs=Number(getCookie("falsch_abs"));
-}
+}*/
+
+
+var unbeantwortet_abs=106;
+
+/** 
 if (getCookie("unbeantwortet_abs")==""){
     unbeantwortet_abs=106;
 } else {
     unbeantwortet_abs=Number(getCookie("unbeantwortet_abs"));
 }
+*/
 
 var fragen_total = unbeantwortet_abs + falsch_abs + richtig_abs;
 document.getElementById("fragen").innerHTML="Aktuell "+ fragen_total+" Fragen gestartet"; 
