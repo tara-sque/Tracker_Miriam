@@ -214,7 +214,7 @@ if (getCookie("falsch_abs")==""){
 }*/
 
 
-var unbeantwortet_abs=106;
+var unbeantwortet_abs=0;
 
 /** 
 if (getCookie("unbeantwortet_abs")==""){
@@ -254,7 +254,7 @@ function updateFalsch(){
 }
 
 function updateUnbeantwortet(){
-    add_to_richtig(Number(document.getElementById("input-unbeantwortet").value));
+    add_to_unbeantwortet(Number(document.getElementById("input-unbeantwortet").value));
     updateAntwortenCircle(richtig_rel, falsch_rel, unbeantwortet_rel);
     document.getElementById("input-unbeantwortet").value = ""
 }
