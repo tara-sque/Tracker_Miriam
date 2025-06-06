@@ -40,17 +40,21 @@ function add_to_richtig(amount){
     fragen_total = unbeantwortet_abs + falsch_abs + richtig_abs;
     document.getElementById("fragen").innerHTML="Aktuell "+ fragen_total+" Fragen gestartet"; 
     richtig_rel = Math.round(richtig_abs/fragen_total*100); 
-    setCookie("richtig_abs", richtig_abs);
+    falsch_rel = Math.round(falsch_abs/fragen_total*100);
+    /*setCookie("richtig_abs", richtig_abs);*/
     document.getElementById("richtig").innerHTML=richtig_abs+" ("+richtig_rel+"%)"; 
+    document.getElementById("falsch").innerHTML=falsch_abs+" ("+falsch_rel+"%)"; 
 }
 
 function add_to_falsch(amount){
     falsch_abs = falsch_abs + amount;
-    falsch_rel = Math.round(falsch_abs/fragen_total*100); 
     fragen_total = unbeantwortet_abs + falsch_abs + richtig_abs;
     document.getElementById("fragen").innerHTML="Aktuell "+ fragen_total+" Fragen gestartet"; 
-    setCookie("falsch_abs", falsch_abs);
+    falsch_rel = Math.round(falsch_abs/fragen_total*100); 
+    richtig_rel = Math.round(richtig_abs/fragen_total*100); 
+    /*setCookie("falsch_abs", falsch_abs);*/
     document.getElementById("falsch").innerHTML=falsch_abs+" ("+falsch_rel+"%)"; 
+    document.getElementById("richtig").innerHTML=richtig_abs+" ("+richtig_rel+"%)";
 }
 
 function add_to_unbeantwortet(amount){
@@ -189,12 +193,6 @@ function updateGelesen(){
 
 
 
-
-
-
-
-
-
 var richtig_abs=1613;
 /**
 if (getCookie("richtig_abs")==""){
@@ -212,7 +210,6 @@ if (getCookie("falsch_abs")==""){
 } else {
     falsch_abs=Number(getCookie("falsch_abs"));
 }*/
-
 
 var unbeantwortet_abs=0;
 
@@ -242,19 +239,16 @@ updateAntwortenCircle(richtig_rel, falsch_rel, unbeantwortet_rel);
 function updateRichtig(){
     add_to_richtig(Number(document.getElementById("input-richtig").value));
     updateAntwortenCircle(richtig_rel, falsch_rel, unbeantwortet_rel);
-    fragen_total = unbeantwortet_abs + falsch_abs + richtig_abs;
-    document.getElementById("fragen").innerHTML="Aktuell "+ fragen_total+" Fragen gestartet";
-    document.getElementById("input-richtig").value = ""
+    document.getElementById("input-richtig").value = "";
 }
 
 function updateFalsch(){
     add_to_falsch(Number(document.getElementById("input-falsch").value));
     updateAntwortenCircle(richtig_rel, falsch_rel, unbeantwortet_rel);
-    document.getElementById("input-falsch").value = ""
+    document.getElementById("input-falsch").value = "";
 }
 
 function updateUnbeantwortet(){
-    add_to_unbeantwortet(Number(document.getElementById("input-unbeantwortet").value));
-    updateAntwortenCircle(richtig_rel, falsch_rel, unbeantwortet_rel);
-    document.getElementById("input-unbeantwortet").value = ""
+    alert('Let ur fave gf know u wanna use this <3');
+    document.getElementById("input-unbeantwortet").value = "";
 }
