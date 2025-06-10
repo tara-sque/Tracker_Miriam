@@ -26,6 +26,11 @@ function add_to_gelernt(amount){
     gelernt_rel = Math.round(gelernt_abs/module_total*100); 
     setCookie("gelernt_abs", gelernt_abs);
     document.getElementById("gelernt").innerHTML=gelernt_abs+" ("+gelernt_rel+"%)"; 
+    gelesen_rel = Math.round(gelesen_abs/module_total*100);
+    document.getElementById("gelesen").innerHTML=gelesen_abs+" ("+gelesen_rel+"%)"; 
+    neu_abs = module_total-gelernt_abs-gelesen_abs;
+    neu_rel=Math.round(neu_abs/module_total*100); 
+    document.getElementById("neu").innerHTML=neu_abs+" ("+neu_rel+"%)"; 
 }
 
 function add_to_gelesen(amount){
@@ -33,6 +38,11 @@ function add_to_gelesen(amount){
     gelesen_rel = Math.round(gelesen_abs/module_total*100); 
     setCookie("gelesen_abs", gelesen_abs);
     document.getElementById("gelesen").innerHTML=gelesen_abs+" ("+gelesen_rel+"%)"; 
+    gelernt_rel = Math.round(gelernt_abs/module_total*100); 
+    document.getElementById("gelernt").innerHTML=gelernt_abs+" ("+gelernt_rel+"%)"; 
+    neu_abs = module_total-gelernt_abs-gelesen_abs;
+    neu_rel=Math.round(neu_abs/module_total*100); 
+    document.getElementById("neu").innerHTML=neu_abs+" ("+neu_rel+"%)"; 
 }
 
 function add_to_richtig(amount){
